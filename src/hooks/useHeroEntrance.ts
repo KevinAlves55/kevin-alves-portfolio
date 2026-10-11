@@ -7,19 +7,34 @@ export function useHeroEntrance() {
 
   useGSAP(
     () => {
-      const items = gsap.utils.toArray<HTMLElement>('[data-hero-reveal]')
-      if (items.length === 0) return
-
       const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false
       if (reduce) return
 
-      gsap.from(items, {
-        autoAlpha: 0,
-        y: 18,
-        duration: 0.7,
-        stagger: 0.08,
-        ease: 'power2.out',
-      })
+      const glow = root.current?.querySelector('[data-hero-glow]') ?? null
+      const items = gsap.utils.toArray<HTMLElement>('[data-hero-reveal]')
+      const timeline = gsap.timeline()
+
+      if (glow) {
+        timeline.from(glow, {
+          autoAlpha: 0,
+          duration: 0.9,
+          ease: 'power2.out',
+        })
+      }
+
+      if (items.length > 0) {
+        timeline.from(
+          items,
+          {
+            autoAlpha: 0,
+            y: 18,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: 'power2.out',
+          },
+          glow ? '-=0.2' : 0,
+        )
+      }
     },
     { scope: root },
   )

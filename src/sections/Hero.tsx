@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, Download } from 'lucide-react'
+import { ChevronDown, Download, Sparkle } from 'lucide-react'
 import { ButtonLink } from '../components/ButtonLink.tsx'
 import { Container } from '../components/Container.tsx'
 import { site } from '../data/site.ts'
@@ -20,37 +20,38 @@ export function Hero() {
     <section id="inicio" ref={root} className="relative overflow-hidden">
       <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
       <div
+        data-hero-glow
         className="pointer-events-none absolute top-16 left-1/2 size-144 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,var(--glow),transparent_68%)]"
         aria-hidden="true"
       />
       <Container className="relative flex min-h-svh flex-col items-center justify-center pt-28 pb-16 text-center">
-        <div className="flex w-full max-w-3xl flex-col items-center">
-          <p data-hero-reveal className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line bg-surface/80 px-3.5 py-1.5 text-xs text-muted sm:text-sm">
+        <div className="flex w-full max-w-4xl flex-col items-center">
+          <p data-hero-reveal className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line bg-surface/55 px-3 py-1 text-[0.72rem] leading-none text-muted sm:text-xs">
             <span className="status-dot shrink-0" aria-hidden="true" />
-            <span>{copy.site.role}</span>
+            <span className="font-medium text-ink">{copy.site.role}</span>
             <span aria-hidden="true">·</span>
             <span>{copy.site.location}</span>
           </p>
-          <p data-hero-reveal className="mt-8 text-sm font-medium text-accent-soft sm:text-base">{copy.site.greeting}</p>
-          <h1 data-hero-reveal className="mt-3 font-serif text-4xl leading-[1.08] font-medium tracking-tight text-balance sm:text-6xl lg:text-7xl">
+          <p data-hero-reveal className="mt-8 font-mono text-sm tracking-[0.16em] text-accent-soft sm:text-base">{copy.site.greeting}</p>
+          <h1 data-hero-reveal className="mt-1.5 font-serif text-5xl leading-[1.05] font-medium tracking-tight text-balance sm:text-7xl lg:text-8xl">
             {site.givenName} <span className="text-accent">{site.familyName}</span>
           </h1>
-          <p data-hero-reveal className="mt-6 max-w-2xl font-serif text-xl leading-snug font-normal text-pretty sm:text-2xl">{copy.site.headline}</p>
-          <p data-hero-reveal className="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-muted sm:text-base">{copy.site.lede}</p>
+          <p data-hero-reveal className="mt-6 max-w-3xl font-serif text-2xl leading-snug font-normal text-pretty sm:text-3xl">{copy.site.headline}</p>
+          <p data-hero-reveal className="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-muted sm:text-lg">{copy.site.lede}</p>
           <div data-hero-reveal className="mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
-            <ButtonLink href="#projetos" className="w-full sm:w-auto">
+            <ButtonLink href="#projetos" shape="soft" className="w-full sm:w-auto">
+              <Sparkle className="size-4" aria-hidden="true" />
               {copy.cta.projects}
-              <ArrowRight className="size-4" aria-hidden="true" />
             </ButtonLink>
             {cv ? (
-              <ButtonLink href={cv} variant="secondary" download className="w-full sm:w-auto">
+              <ButtonLink href={cv} variant="secondary" shape="soft" download className="w-full sm:w-auto">
                 <Download className="size-4" aria-hidden="true" />
                 {copy.cta.cv}
               </ButtonLink>
             ) : (
               <a
                 aria-disabled="true"
-                className="interactive-control inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-line-strong bg-surface px-5 text-sm font-semibold text-ink hover:border-accent hover:bg-raised sm:w-auto"
+                className="interactive-control inline-flex min-h-13 w-full cursor-pointer items-center justify-center gap-2 rounded-[10px] border border-line-strong bg-surface px-6 text-sm font-semibold text-ink hover:border-accent hover:bg-raised sm:w-auto"
               >
                 <Download className="size-4" aria-hidden="true" />
                 {copy.cta.cv}

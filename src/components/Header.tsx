@@ -60,14 +60,14 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#inicio" className="flex min-h-11 min-w-0 items-center gap-2.5 font-semibold tracking-tight">
+        <a href="#inicio" aria-label={site.name} className="flex min-h-11 min-w-0 items-center gap-2.5 font-semibold tracking-tight">
           <span
             className="grid size-8 shrink-0 place-items-center rounded-lg border border-line bg-surface font-mono text-[0.68rem] text-accent-soft"
             aria-hidden="true"
           >
             KA
           </span>
-          <span className="truncate max-sm:sr-only">{site.name}</span>
+          <span className="font-mono text-sm tracking-tight">{'</ KA>'}</span>
         </a>
 
         <nav aria-label={copy.ui.navLabel} className="hidden lg:block">
