@@ -10,7 +10,7 @@ import { resolveHref } from '../lib/links.ts'
 import { cn } from '../lib/cn.ts'
 
 const accessClass =
-  'inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-line text-ink transition-colors hover:border-line-strong hover:bg-surface'
+  'inline-flex size-11 max-sm:size-10 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-line text-ink transition-colors hover:border-line-strong hover:bg-surface'
 
 function AccessLink({ href, label, external, children }: { href: string | null; label: string; external: string; children: ReactNode }) {
   if (!href) {
@@ -59,8 +59,8 @@ export function Header() {
         scrolled || open ? 'border-line bg-canvas/90 backdrop-blur-md' : 'border-transparent bg-transparent',
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#inicio" aria-label={site.name} className="flex min-h-11 min-w-0 items-center gap-2.5 font-semibold tracking-tight">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-8">
+        <a href="#inicio" aria-label={site.name} className="flex min-h-11 shrink-0 items-center gap-2 font-semibold tracking-tight sm:gap-2.5">
           <span
             className="grid size-8 shrink-0 place-items-center rounded-lg border border-line bg-surface font-mono text-[0.68rem] text-accent-soft"
             aria-hidden="true"
@@ -89,7 +89,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1 max-lg:ml-auto sm:gap-2">
           <button
             type="button"
             onClick={toggleLocale}
