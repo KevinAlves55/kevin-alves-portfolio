@@ -8,7 +8,9 @@ type SectionHeadingProps = {
 export function SectionHeading({ id, index, title, description }: SectionHeadingProps) {
   return (
     <div className="max-w-2xl">
-      <p className="font-mono text-xs tracking-[0.22em] text-accent-soft uppercase">{index}</p>
+      <p className="font-mono text-xs tracking-[0.22em] text-accent-soft uppercase" aria-hidden="true">
+        {index}
+      </p>
       <h2 id={id} className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
         {title}
       </h2>

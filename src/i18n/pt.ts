@@ -25,17 +25,16 @@ export const pt = {
   about: {
     index: '01',
     title: 'Sobre',
+    photoAlt: 'Retrato de Kevin Alves',
+    phrase: 'Traduzo a necessidade do cliente em escopo, regra e entrega em produção.',
     paragraphs: [
-      'Trabalho como Programador Web Júnior na Alphacode. O foco está em aplicações web e mobile que já rodam em produção: evolução de funcionalidades, manutenção e suporte para o sistema continuar operando.',
-      'Nesse contexto, desenvolvo e sustento APIs, regras de negócio e integrações com serviços de pagamento, delivery e mensageria. Também participo de code review e ajudo a organizar as entregas do time.',
-      'Sigo estudando arquitetura, qualidade de software e inteligência artificial aplicada ao desenvolvimento. Na seção de habilidades, isso aparece separado do que já uso no trabalho.',
+      'Atuo como desenvolvedor full stack pleno na Alphacode, em redes de delivery. O trabalho deixou de ser só executar tarefa: participo da reunião com o cliente, levanto requisito e impacto, desenho a regra e abro a release com um time de três pessoas.',
+      'No dia a dia isso vira organização de branches, revisão de código, atualização de produção e versão dos apps. Nas soluções, o foco está em pagamento, delivery e mensageria, com banco e regras de processamento feitos para aguentar volume e continuar fáceis de manter. Uso LLMs e agentes de IA nesse fluxo, da regra ao código, sem abrir mão do desenho da solução.',
     ],
-    focusTitle: 'No que atuo',
-    focus: [
-      { title: 'Full stack', detail: 'Aplicações web e mobile, da interface à API e ao banco.' },
-      { title: 'Integrações', detail: 'Pagamento, delivery, mensageria e outros serviços externos.' },
-      { title: 'Produção', detail: 'Sustentação, correção e evolução de sistemas em uso.' },
-      { title: 'Colaboração', detail: 'Code review e apoio à organização das entregas.' },
+    facts: [
+      { value: '3', label: 'pessoas no time do projeto' },
+      { value: '415 mil+', label: 'pedidos por mês nos sistemas em que construí o banco, as regras e a ponte com o cliente' },
+      { value: '5,8 mi', label: 'usuários ativos nessa base' },
     ],
   },
   experienceSection: {

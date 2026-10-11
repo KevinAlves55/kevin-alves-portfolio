@@ -8,7 +8,7 @@ import type { SocialKind } from '../types/content.ts'
 export const links: Record<SocialKind, string> = {
   github: 'https://github.com/KevinAlves55',
   linkedin: 'https://www.linkedin.com/in/kevinalvesdasilva/',
-  email: '',
+  email: 'programador.kevin4773@gmail.com',
 }
 
 export const site = {

@@ -27,17 +27,16 @@ export const en: Messages = {
   about: {
     index: '01',
     title: 'About',
+    photoAlt: 'Portrait of Kevin Alves',
+    phrase: 'I turn a client need into scope, rules, and a production release.',
     paragraphs: [
-      'I work as a Junior Web Developer at Alphacode. The focus is on web and mobile applications already in production: evolving features, maintenance, and support so the system keeps running.',
-      'In that context, I build and sustain APIs, business rules, and integrations with payment, delivery, and messaging services. I also take part in code review and help organize the team’s deliveries.',
-      'I keep studying architecture, software quality, and artificial intelligence applied to development. In the skills section, that stays separate from what I already use at work.',
+      'I work as a mid-level full stack developer at Alphacode, on delivery networks. The work is no longer only executing a task: I join the client meeting, gather requirements and impact, design the rule, and open the release with a team of three.',
+      'Day to day, that becomes branch organization, code review, production updates, and app releases. In the solutions, the focus is payment, delivery, and messaging, with a database and processing rules built to handle volume and stay maintainable. I use LLMs and AI agents in that flow, from the rule to the code, without giving up the design of the solution.',
     ],
-    focusTitle: 'What I work on',
-    focus: [
-      { title: 'Full stack', detail: 'Web and mobile applications, from the interface to the API and the database.' },
-      { title: 'Integrations', detail: 'Payment, delivery, messaging, and other external services.' },
-      { title: 'Production', detail: 'Support, fixes, and evolution of systems in use.' },
-      { title: 'Collaboration', detail: 'Code review and help organizing deliveries.' },
+    facts: [
+      { value: '3', label: 'people on the project team' },
+      { value: '415k+', label: 'orders a month on the systems where I built the database, the rules, and the bridge to the client' },
+      { value: '5.8M', label: 'active users in that base' },
     ],
   },
   experienceSection: {

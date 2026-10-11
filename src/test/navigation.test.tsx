@@ -43,10 +43,11 @@ describe('navegação', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 
-  it('publica GitHub e LinkedIn e mantém o e-mail em branco', () => {
+  it('publica GitHub, LinkedIn e o e-mail', () => {
     render(<App />)
 
-    expect(screen.getAllByText('Não informado')).toHaveLength(1)
+    expect(screen.queryByText('Não informado')).not.toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: links.email }).length).toBeGreaterThan(0)
     expect(screen.queryByRole('link', { name: /repositório/i })).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Publicados' })).not.toBeInTheDocument()
     expect(screen.getAllByText('Planejado')).toHaveLength(5)
