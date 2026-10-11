@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kevinalves55.github.io/kevin-alves-portfolio/sitemap.xml

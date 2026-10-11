@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
+        } catch (error) {
+          document.documentElement.dataset.theme = 'dark'
+        }
+      })()
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kevin Alves — Desenvolvedor Full Stack Pleno</title>
+    <meta
+      name="description"
+      content="Portfólio de Kevin Alves, desenvolvedor Full Stack Pleno. Aplicações web e mobile, APIs, integrações, microsserviços e evolução de sistemas em produção."
+    />
+    <meta name="author" content="Kevin Alves" />
+    <meta name="theme-color" content="#0B0714" />
+    <link rel="canonical" href="https://kevinalves55.github.io/kevin-alves-portfolio/" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Kevin Alves" />
+    <meta property="og:title" content="Kevin Alves — Desenvolvedor Full Stack Pleno" />
+    <meta
+      property="og:description"
+      content="Aplicações web e mobile, APIs, integrações, microsserviços e evolução de sistemas em produção."
+    />
+    <meta property="og:url" content="https://kevinalves55.github.io/kevin-alves-portfolio/" />
+    <meta property="og:image" content="https://kevinalves55.github.io/kevin-alves-portfolio/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kevin Alves — Desenvolvedor Full Stack Pleno" />
+    <meta
+      name="twitter:description"
+      content="Aplicações web e mobile, APIs, integrações, microsserviços e evolução de sistemas em produção."
+    />
+    <meta name="twitter:image" content="https://kevinalves55.github.io/kevin-alves-portfolio/og.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
