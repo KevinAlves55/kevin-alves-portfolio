@@ -1,11 +1,15 @@
 import { ArrowUpRight } from 'lucide-react'
-import { projectsSection, ui } from '../data/site.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 import { resolveHref } from '../lib/links.ts'
 import { cn } from '../lib/cn.ts'
-import type { Project } from '../types/content.ts'
+import type { Messages } from '../i18n/types.ts'
+
+type CardProject = Omit<Messages['projects'][number], 'image'> & {
+  image: { src: string; alt: string; width: number; height: number } | null
+}
 
 type ProjectCardProps = {
-  project: Project
+  project: CardProject
   index: number
 }
 
@@ -16,6 +20,8 @@ function publicSrc(src: string): string {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const { copy } = useLocale()
+  const projectsSection = copy.projectsSection
   const planned = project.status === 'planejado'
   const repository = project.repository ? resolveHref('github', project.repository) : null
   const demo = project.demo ? resolveHref('github', project.demo) : null
@@ -49,7 +55,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         />
       ) : null}
 
-      <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tecnologias">
+      <ul className="mt-5 flex flex-wrap gap-2" aria-label={copy.ui.technologies}>
         {project.technologies.map((technology) => (
           <li key={technology} className="rounded-md border border-line bg-canvas px-2.5 py-1 font-mono text-xs text-muted">
             {technology}
@@ -81,7 +87,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             >
               {projectsSection.repositoryLabel}
               <ArrowUpRight className="size-4" aria-hidden="true" />
-              <span className="sr-only"> ({ui.external})</span>
+              <span className="sr-only"> ({copy.ui.external})</span>
             </a>
           ) : null}
           {demo ? (
@@ -93,7 +99,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             >
               {projectsSection.demoLabel}
               <ArrowUpRight className="size-4" aria-hidden="true" />
-              <span className="sr-only"> ({ui.external})</span>
+              <span className="sr-only"> ({copy.ui.external})</span>
             </a>
           ) : null}
         </div>

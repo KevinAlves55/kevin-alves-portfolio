@@ -1,10 +1,14 @@
 import { Container } from '../components/Container.tsx'
 import { ProjectCard } from '../components/ProjectCard.tsx'
 import { SectionHeading } from '../components/SectionHeading.tsx'
-import { plannedProjects, publishedProjects } from '../data/projects.ts'
-import { projectsSection } from '../data/site.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 
 export function Projects() {
+  const { copy } = useLocale()
+  const projectsSection = copy.projectsSection
+  const publishedProjects = copy.projects.filter((project) => project.status === 'publicado')
+  const plannedProjects = copy.projects.filter((project) => project.status === 'planejado')
+
   return (
     <section id="projetos" aria-labelledby="projetos-titulo" className="border-t border-line py-20 sm:py-28">
       <Container>

@@ -1,8 +1,11 @@
 import { Container } from '../components/Container.tsx'
 import { SectionHeading } from '../components/SectionHeading.tsx'
-import { about } from '../data/site.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 
 export function About() {
+  const { copy } = useLocale()
+  const about = copy.about
+
   return (
     <section id="sobre" aria-labelledby="sobre-titulo" className="border-t border-line py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)] lg:items-start">

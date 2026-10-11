@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { App } from '../App.tsx'
+import { pt } from '../i18n/pt.ts'
 import { themeStorageKey } from '../lib/theme.ts'
-import { ui } from '../data/site.ts'
 
 describe('tema', () => {
   beforeEach(() => {
@@ -17,11 +17,11 @@ describe('tema', () => {
 
     expect(document.documentElement.dataset.theme).toBe('dark')
 
-    await user.click(screen.getByRole('button', { name: ui.themeToLight }))
+    await user.click(screen.getByRole('button', { name: pt.ui.themeToLight }))
 
     expect(document.documentElement.dataset.theme).toBe('light')
     expect(localStorage.getItem(themeStorageKey)).toBe('light')
-    expect(screen.getByRole('button', { name: ui.themeToDark })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: pt.ui.themeToDark })).toBeInTheDocument()
   })
 
   it('restaura a preferência salva', () => {
@@ -29,6 +29,6 @@ describe('tema', () => {
     render(<App />)
 
     expect(document.documentElement.dataset.theme).toBe('light')
-    expect(screen.getByRole('button', { name: ui.themeToDark })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: pt.ui.themeToDark })).toBeInTheDocument()
   })
 })

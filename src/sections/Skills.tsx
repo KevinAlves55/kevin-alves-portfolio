@@ -2,10 +2,9 @@ import { AppWindow, Bot, Cable, Database, GitPullRequest, Server, Smartphone } f
 import type { LucideIcon } from 'lucide-react'
 import { Container } from '../components/Container.tsx'
 import { SectionHeading } from '../components/SectionHeading.tsx'
-import { skillGroups } from '../data/skills.ts'
-import { skillsSection } from '../data/site.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 
-const icons: Record<(typeof skillGroups)[number]['id'], LucideIcon> = {
+const icons: Record<string, LucideIcon> = {
   frontend: AppWindow,
   backend: Server,
   mobile: Smartphone,
@@ -16,6 +15,9 @@ const icons: Record<(typeof skillGroups)[number]['id'], LucideIcon> = {
 }
 
 export function Skills() {
+  const { copy } = useLocale()
+  const skillsSection = copy.skillsSection
+
   return (
     <section id="competencias" aria-labelledby="competencias-titulo" className="border-t border-line py-20 sm:py-28">
       <Container>
@@ -26,8 +28,9 @@ export function Skills() {
           description={skillsSection.description}
         />
         <ul className="mt-12 grid gap-4 md:grid-cols-2">
-          {skillGroups.map((group) => {
+          {copy.skills.map((group) => {
             const Icon = icons[group.id]
+            if (!Icon) return null
             return (
               <li key={group.id} className="panel rounded-2xl p-6">
                 <div className="flex items-start gap-3">

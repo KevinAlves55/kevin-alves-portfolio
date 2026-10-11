@@ -22,14 +22,13 @@ npm run preview
 
 ## Onde editar o conteúdo
 
-- Dados pessoais, textos e links: `src/data/site.ts`
-- Experiência: `src/data/experience.ts`
-- Projetos: `src/data/projects.ts`
-- Competências: `src/data/skills.ts`
+- Dados pessoais e links: `src/data/site.ts`
+- Textos em português e inglês: `src/i18n/pt.ts` e `src/i18n/en.ts`
+- Currículo: `public/cv/kevin-alves-cv.pdf`
 
 Links vazios não são renderizados. GitHub e LinkedIn precisam começar com `https://`. O e-mail precisa conter `@`.
 
-Para publicar um projeto de verdade, adicione um item em `src/data/projects.ts` com `status: 'publicado'` e preencha `repository` ou `demo` só quando a URL existir. Itens com `status: 'planejado'` continuam visíveis como estudos, não como entregas concluídas.
+Para publicar um projeto de verdade, adicione o mesmo item nos dois arquivos de idioma com `status: 'publicado'` e preencha `repository` ou `demo` só quando a URL existir. Itens com `status: 'planejado'` continuam visíveis como estudos, não como entregas concluídas.
 
 Imagens de projeto em `public/` devem ser referenciadas sem domínio. O componente aplica o `base` do Vite, então o arquivo funciona no GitHub Pages.
 

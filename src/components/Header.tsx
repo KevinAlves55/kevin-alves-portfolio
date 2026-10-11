@@ -1,9 +1,10 @@
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { GithubMark, LinkedinMark } from './BrandMarks.tsx'
 import { useCallback, useEffect, useState, type ReactNode } from 'react'
-import { callsToAction, links, navigation, site, ui } from '../data/site.ts'
+import { links, sections, site } from '../data/site.ts'
 import { useActiveSection } from '../hooks/useActiveSection.ts'
 import { useDialog } from '../hooks/useDialog.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 import { useTheme } from '../hooks/useTheme.ts'
 import { resolveHref } from '../lib/links.ts'
 import { cn } from '../lib/cn.ts'
@@ -11,7 +12,7 @@ import { cn } from '../lib/cn.ts'
 const accessClass =
   'inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-line text-ink transition-colors hover:border-line-strong hover:bg-surface'
 
-function AccessLink({ href, label, children }: { href: string | null; label: string; children: ReactNode }) {
+function AccessLink({ href, label, external, children }: { href: string | null; label: string; external: string; children: ReactNode }) {
   if (!href) {
     return (
       <span role="img" aria-label={label} className={accessClass}>
@@ -23,18 +24,19 @@ function AccessLink({ href, label, children }: { href: string | null; label: str
   return (
     <a href={href} target="_blank" rel="noreferrer noopener" aria-label={label} className={accessClass}>
       {children}
-      <span className="sr-only"> ({ui.external})</span>
+      <span className="sr-only"> ({external})</span>
     </a>
   )
 }
 
-const sectionIds = navigation.map((item) => item.id)
+const sectionIds = sections.map((item) => item.id)
 
 export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const active = useActiveSection(sectionIds)
   const { theme, toggleTheme } = useTheme()
+  const { locale, copy, toggleLocale } = useLocale()
   const close = useCallback(() => setOpen(false), [])
   const dialogRef = useDialog(open, close)
   const github = resolveHref('github', links.github)
@@ -66,9 +68,9 @@ export function Header() {
           <span className="truncate max-sm:sr-only">{site.name}</span>
         </a>
 
-        <nav aria-label={ui.navLabel} className="hidden lg:block">
+        <nav aria-label={copy.ui.navLabel} className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            {navigation.map((item) => (
+            {sections.map((item) => (
               <li key={item.id}>
                 <a
                   href={item.href}
@@ -78,7 +80,7 @@ export function Header() {
                     active === item.id ? 'text-ink' : 'text-muted hover:text-ink',
                   )}
                 >
-                  {item.label}
+                  {copy.nav[item.id]}
                 </a>
               </li>
             ))}
@@ -88,24 +90,24 @@ export function Header() {
         <div className="flex shrink-0 items-center gap-2">
           <button
             type="button"
+            onClick={toggleLocale}
             className={cn(accessClass, 'font-sans text-xs font-semibold tracking-wide')}
-            aria-label={ui.languageToEnglish}
-            aria-disabled="true"
+            aria-label={locale === 'pt' ? copy.ui.languageToEnglish : copy.ui.languageToPortuguese}
           >
-            EN
+            {locale === 'pt' ? 'EN' : 'PT'}
           </button>
           <button
             type="button"
             onClick={toggleTheme}
-            aria-label={theme === 'dark' ? ui.themeToLight : ui.themeToDark}
+            aria-label={theme === 'dark' ? copy.ui.themeToLight : copy.ui.themeToDark}
             className={accessClass}
           >
             {theme === 'dark' ? <Sun className="size-4" aria-hidden="true" /> : <Moon className="size-4" aria-hidden="true" />}
           </button>
-          <AccessLink href={github} label={callsToAction.github}>
+          <AccessLink href={github} label={copy.cta.github} external={copy.ui.external}>
             <GithubMark className="size-5" />
           </AccessLink>
-          <AccessLink href={linkedin} label={callsToAction.linkedin}>
+          <AccessLink href={linkedin} label={copy.cta.linkedin} external={copy.ui.external}>
             <LinkedinMark className="size-5" />
           </AccessLink>
           <button
@@ -116,7 +118,7 @@ export function Header() {
             onClick={() => setOpen((current) => !current)}
           >
             {open ? <X className="size-4" aria-hidden="true" /> : <Menu className="size-4" aria-hidden="true" />}
-            <span className="sr-only">{open ? ui.menuClose : ui.menuOpen}</span>
+            <span className="sr-only">{open ? copy.ui.menuClose : copy.ui.menuOpen}</span>
           </button>
         </div>
       </div>
@@ -128,12 +130,12 @@ export function Header() {
           ref={dialogRef}
           role="dialog"
           aria-modal="true"
-          aria-label={ui.menuLabel}
+          aria-label={copy.ui.menuLabel}
           className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto border-t border-line bg-canvas px-5 py-6 lg:hidden"
         >
-          <nav aria-label={ui.navLabel}>
+          <nav aria-label={copy.ui.navLabel}>
             <ul className="flex flex-col">
-              {navigation.map((item) => (
+              {sections.map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.href}
@@ -141,7 +143,7 @@ export function Header() {
                     aria-current={active === item.id ? 'true' : undefined}
                     className="flex min-h-12 items-center border-b border-line text-lg"
                   >
-                    {item.label}
+                    {copy.nav[item.id]}
                   </a>
                 </li>
               ))}

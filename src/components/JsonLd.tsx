@@ -1,7 +1,9 @@
 import { links, site } from '../data/site.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 import { resolveHref } from '../lib/links.ts'
 
 export function JsonLd() {
+  const { copy } = useLocale()
   const sameAs = (['github', 'linkedin'] as const).flatMap((kind) => {
     const href = resolveHref(kind, links[kind])
     return href ? [href] : []
@@ -22,9 +24,9 @@ export function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: site.name,
-    jobTitle: site.role,
+    jobTitle: copy.site.role,
     url: site.url,
-    description: site.description,
+    description: copy.site.description,
     worksFor: {
       '@type': 'Organization',
       name: 'Alphacode',

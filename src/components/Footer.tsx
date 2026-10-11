@@ -1,7 +1,8 @@
 import { Mail } from 'lucide-react'
 import type { ComponentType } from 'react'
 import { GithubMark, LinkedinMark } from './BrandMarks.tsx'
-import { contactSection, links, site, ui } from '../data/site.ts'
+import { links, site } from '../data/site.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 import { resolveHref } from '../lib/links.ts'
 import type { SocialKind } from '../types/content.ts'
 
@@ -11,11 +12,19 @@ const icons: Record<SocialKind, ComponentType<{ className?: string }>> = {
   email: Mail,
 }
 
+function asSocialKind(value: string): SocialKind | null {
+  if (value === 'github' || value === 'linkedin' || value === 'email') return value
+  return null
+}
+
 export function Footer() {
+  const { copy } = useLocale()
   const year = new Date().getFullYear()
-  const available = contactSection.channels.flatMap((channel) => {
-    const href = resolveHref(channel.kind, links[channel.kind])
-    return href ? [{ ...channel, href }] : []
+  const available = copy.contact.channels.flatMap((channel) => {
+    const kind = asSocialKind(channel.kind)
+    if (!kind) return []
+    const href = resolveHref(kind, links[kind])
+    return href ? [{ ...channel, kind, href }] : []
   })
 
   return (
@@ -35,7 +44,7 @@ export function Footer() {
                   <a
                     href={channel.href}
                     {...(channel.kind === 'email' ? {} : { target: '_blank', rel: 'noreferrer noopener' })}
-                    aria-label={channel.kind === 'email' ? channel.label : `${channel.label} (${ui.external})`}
+                    aria-label={channel.kind === 'email' ? channel.label : `${channel.label} (${copy.ui.external})`}
                     className="inline-flex size-11 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-ink"
                   >
                     <Icon className="size-4" aria-hidden="true" />

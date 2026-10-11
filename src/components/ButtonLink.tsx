@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { ui } from '../data/site.ts'
+import { useLocale } from '../hooks/useLocale.ts'
 import { cn } from '../lib/cn.ts'
 
 type ButtonLinkProps = {
@@ -17,6 +17,8 @@ const variants: Record<NonNullable<ButtonLinkProps['variant']>, string> = {
 }
 
 export function ButtonLink({ href, children, variant = 'primary', external = false, download = false, className }: ButtonLinkProps) {
+  const { copy } = useLocale()
+
   return (
     <a
       href={href}
@@ -29,7 +31,7 @@ export function ButtonLink({ href, children, variant = 'primary', external = fal
       {...(download ? { download: '' } : {})}
     >
       {children}
-      {external ? <span className="sr-only"> ({ui.external})</span> : null}
+      {external ? <span className="sr-only"> ({copy.ui.external})</span> : null}
     </a>
   )
 }

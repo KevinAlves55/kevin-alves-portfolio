@@ -1,10 +1,6 @@
 export type Theme = 'dark' | 'light'
 
-export type NavItem = {
-  id: string
-  href: string
-  label: string
-}
+export type Locale = 'pt' | 'en'
 
 export type ExperienceEntry = {
   id: string
