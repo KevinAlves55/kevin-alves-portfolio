@@ -9,7 +9,7 @@ import { resolveHref } from '../lib/links.ts'
 import { cn } from '../lib/cn.ts'
 
 const accessClass =
-  'inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-line text-ink transition-colors hover:border-line-strong hover:bg-surface'
+  'inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-line text-ink transition-colors hover:border-line-strong hover:bg-surface'
 
 function AccessLink({ href, label, children }: { href: string | null; label: string; children: ReactNode }) {
   if (!href) {

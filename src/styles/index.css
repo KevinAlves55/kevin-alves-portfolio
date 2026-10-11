@@ -48,6 +48,7 @@
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --font-sans: 'Manrope Variable', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', ui-serif, Georgia, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
@@ -131,6 +132,24 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .interactive-control {
+    transition:
+      transform 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .interactive-control:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 28%, transparent);
+  }
+
+  .interactive-control:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
   .card-hover {
     transition:
       border-color 160ms ease,

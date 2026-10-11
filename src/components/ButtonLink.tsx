@@ -13,7 +13,7 @@ type ButtonLinkProps = {
 
 const variants: Record<NonNullable<ButtonLinkProps['variant']>, string> = {
   primary: 'bg-accent text-accent-ink hover:bg-accent-hover',
-  secondary: 'border border-line-strong bg-surface text-ink hover:border-accent',
+  secondary: 'border border-line-strong bg-surface text-ink hover:border-accent hover:bg-raised',
 }
 
 export function ButtonLink({ href, children, variant = 'primary', external = false, download = false, className }: ButtonLinkProps) {
@@ -21,7 +21,7 @@ export function ButtonLink({ href, children, variant = 'primary', external = fal
     <a
       href={href}
       className={cn(
-        'inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition-colors',
+        'interactive-control inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold',
         variants[variant],
         className,
       )}
