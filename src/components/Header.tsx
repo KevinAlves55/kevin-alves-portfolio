@@ -67,7 +67,7 @@ export function Header() {
           >
             KA
           </span>
-          <span className="font-mono text-sm tracking-tight">{'</ KA>'}</span>
+          <span className="font-mono text-sm tracking-tight">{'<KA/>'}</span>
         </a>
 
         <nav aria-label={copy.ui.navLabel} className="hidden lg:block">
