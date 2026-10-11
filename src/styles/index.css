@@ -96,8 +96,8 @@
     linear-gradient(to right, var(--line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--line) 1px, transparent 1px);
   background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 18%, transparent 72%);
-  mask-image: radial-gradient(ellipse at center, black 18%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 18%, transparent 82%);
+  mask-image: radial-gradient(ellipse at center, black 18%, transparent 82%);
 }
 
 .status-dot {
