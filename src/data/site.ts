@@ -20,11 +20,13 @@ export const site = {
 } as const
 
 export const sections = [
-  { id: 'inicio', href: '#inicio' },
   { id: 'sobre', href: '#sobre' },
   { id: 'experiencia', href: '#experiencia' },
+  { id: 'habilidades', href: '#habilidades' },
   { id: 'projetos', href: '#projetos' },
   { id: 'contato', href: '#contato' },
 ] as const
 
 export type SectionId = (typeof sections)[number]['id']
+
+export const navigation = ['sobre', 'experiencia', 'projetos', 'habilidades', 'contato'] as const satisfies readonly SectionId[]

@@ -10,9 +10,9 @@ export const pt = {
     lede: '4 anos construindo aplicações web e mobile, APIs e microsserviços em produção. Especializado em arquitetura de software, integrações complexas e automação de processos com IA.',
   },
   nav: {
-    inicio: 'Início',
     sobre: 'Sobre',
     experiencia: 'Experiência',
+    habilidades: 'Habilidades',
     projetos: 'Projetos',
     contato: 'Contato',
   },
@@ -28,7 +28,7 @@ export const pt = {
     paragraphs: [
       'Trabalho como Programador Web Júnior na Alphacode. O foco está em aplicações web e mobile que já rodam em produção: evolução de funcionalidades, manutenção e suporte para o sistema continuar operando.',
       'Nesse contexto, desenvolvo e sustento APIs, regras de negócio e integrações com serviços de pagamento, delivery e mensageria. Também participo de code review e ajudo a organizar as entregas do time.',
-      'Sigo estudando arquitetura, qualidade de software e inteligência artificial aplicada ao desenvolvimento. Na seção de competências, isso aparece separado do que já uso no trabalho.',
+      'Sigo estudando arquitetura, qualidade de software e inteligência artificial aplicada ao desenvolvimento. Na seção de habilidades, isso aparece separado do que já uso no trabalho.',
     ],
     focusTitle: 'No que atuo',
     focus: [
@@ -67,7 +67,7 @@ export const pt = {
   ],
   skillsSection: {
     index: '03',
-    title: 'Competências',
+    title: 'Habilidades',
     description:
       'Em uso profissional é o que entra no trabalho atual. Em estudo é interesse ou prática ainda sem entrega publicada.',
     professionalLabel: 'Em uso profissional',

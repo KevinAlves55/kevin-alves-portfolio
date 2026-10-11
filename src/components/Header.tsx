@@ -1,7 +1,7 @@
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { GithubMark, LinkedinMark } from './BrandMarks.tsx'
 import { useCallback, useEffect, useState, type ReactNode } from 'react'
-import { links, sections, site } from '../data/site.ts'
+import { links, navigation, sections, site } from '../data/site.ts'
 import { useActiveSection } from '../hooks/useActiveSection.ts'
 import { useDialog } from '../hooks/useDialog.ts'
 import { useLocale } from '../hooks/useLocale.ts'
@@ -29,7 +29,9 @@ function AccessLink({ href, label, external, children }: { href: string | null; 
   )
 }
 
-const sectionIds = sections.map((item) => item.id)
+const sectionById = new Map(sections.map((item) => [item.id, item]))
+const navItems = navigation.map((id) => sectionById.get(id)).filter((item) => item !== undefined)
+const sectionIds = ['inicio', ...sections.map((item) => item.id)]
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -70,7 +72,7 @@ export function Header() {
 
         <nav aria-label={copy.ui.navLabel} className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            {sections.map((item) => (
+            {navItems.map((item) => (
               <li key={item.id}>
                 <a
                   href={item.href}
@@ -135,7 +137,7 @@ export function Header() {
         >
           <nav aria-label={copy.ui.navLabel}>
             <ul className="flex flex-col">
-              {sections.map((item) => (
+              {navItems.map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.href}

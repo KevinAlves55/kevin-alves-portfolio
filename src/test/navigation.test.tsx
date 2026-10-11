@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import { App } from '../App.tsx'
-import { links, sections } from '../data/site.ts'
+import { links, navigation, sections } from '../data/site.ts'
 import { pt } from '../i18n/pt.ts'
 
 describe('navegação', () => {
@@ -17,6 +17,11 @@ describe('navegação', () => {
       }
       expect(document.getElementById(item.id)).not.toBeNull()
     }
+
+    const [desktop] = screen.getAllByRole('navigation', { name: pt.ui.navLabel })
+    expect(within(desktop).getAllByRole('link').map((link) => link.textContent)).toEqual(
+      navigation.map((id) => pt.nav[id]),
+    )
   })
 
   it('abre e fecha o menu mobile pelo teclado', async () => {

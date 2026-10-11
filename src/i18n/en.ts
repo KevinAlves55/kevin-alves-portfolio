@@ -3,18 +3,18 @@ import type { Messages } from './types.ts'
 export const en: Messages = {
   site: {
     greeting: "Hi, I'm",
-    role: 'Full Stack Software Engineer',
+    role: 'Mid-level Full Stack Developer',
     location: 'Itapevi, SP - Brazil',
-    title: 'Kevin Alves — Full Stack Software Engineer',
+    title: 'Kevin Alves — Mid-level Full Stack Developer',
     description:
-      'Portfolio of Kevin Alves, full stack software engineer. Web and mobile applications, APIs, integrations, microservices, and production systems.',
+      'Portfolio of Kevin Alves, mid-level full stack developer. Web and mobile applications, APIs, integrations, microservices, and production systems.',
     headline: 'I turn business needs into software solutions.',
     lede: '4 years building web and mobile applications, APIs, and microservices in production. Focused on software architecture, complex integrations, and process automation with AI.',
   },
   nav: {
-    inicio: 'Home',
     sobre: 'About',
     experiencia: 'Experience',
+    habilidades: 'Skills',
     projetos: 'Projects',
     contato: 'Contact',
   },
