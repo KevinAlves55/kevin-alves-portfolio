@@ -26,18 +26,18 @@ export function Hero() {
       />
       <Container className="relative flex min-h-svh flex-col items-center justify-center pt-28 pb-16 text-center">
         <div className="flex w-full max-w-4xl flex-col items-center">
-          <p data-hero-reveal className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line bg-surface/55 px-3 py-1 text-[0.72rem] leading-none text-muted sm:text-xs">
+          <p data-hero-reveal className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line bg-surface/80 px-3.5 py-1.5 text-xs text-muted sm:text-sm">
             <span className="status-dot shrink-0" aria-hidden="true" />
-            <span className="font-medium text-ink">{copy.site.role}</span>
+            <span>{copy.site.role}</span>
             <span aria-hidden="true">·</span>
             <span>{copy.site.location}</span>
           </p>
           <p data-hero-reveal className="mt-8 font-mono text-sm tracking-[0.16em] text-accent-soft sm:text-base">{copy.site.greeting}</p>
-          <h1 data-hero-reveal className="mt-1.5 font-serif text-5xl leading-[1.05] font-medium tracking-tight text-balance sm:text-7xl lg:text-8xl">
+          <h1 data-hero-reveal className="mt-0 font-serif text-[45px] leading-[1.05] font-medium tracking-tight text-balance sm:text-[69px] lg:text-[93px]">
             {site.givenName} <span className="text-accent">{site.familyName}</span>
           </h1>
-          <p data-hero-reveal className="mt-6 max-w-3xl font-serif text-2xl leading-snug font-normal text-pretty sm:text-3xl">{copy.site.headline}</p>
-          <p data-hero-reveal className="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-muted sm:text-lg">{copy.site.lede}</p>
+          <p data-hero-reveal className="mt-6 max-w-3xl font-serif text-[21px] leading-snug font-normal text-pretty sm:text-[27px]">{copy.site.headline}</p>
+          <p data-hero-reveal className="mt-5 max-w-2xl text-[13px] leading-relaxed text-pretty text-muted sm:text-[15px]">{copy.site.lede}</p>
           <div data-hero-reveal className="mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
             <ButtonLink href="#projetos" shape="soft" className="w-full sm:w-auto">
               <Sparkle className="size-4" aria-hidden="true" />

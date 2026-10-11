@@ -13,7 +13,7 @@ type ButtonLinkProps = {
 }
 
 const variants: Record<NonNullable<ButtonLinkProps['variant']>, string> = {
-  primary: 'bg-accent text-accent-ink hover:bg-accent-hover',
+  primary: 'bg-accent text-white hover:bg-accent-hover',
   secondary: 'border border-line-strong bg-surface text-ink hover:border-accent hover:bg-raised',
 }
 
