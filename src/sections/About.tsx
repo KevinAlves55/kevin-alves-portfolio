@@ -57,11 +57,11 @@ export function About() {
               ))}
             </div>
           </div>
-          <ul data-reveal className="order-4 grid grid-cols-3 grid-rows-[auto_auto_auto] gap-x-3 gap-y-1 lg:col-start-2 lg:row-start-2 lg:h-full lg:self-stretch">
+          <ul data-reveal className="order-4 grid grid-cols-1 gap-3 md:grid-cols-3 md:grid-rows-[auto_auto_auto] md:gap-x-3 md:gap-y-1 lg:col-start-2 lg:row-start-2 lg:h-full lg:self-stretch">
             {about.facts.map((fact) => (
               <li
                 key={fact.value}
-                className="panel about-card row-span-3 grid grid-rows-subgrid items-center rounded-2xl px-2.5 text-center sm:px-3"
+                className="panel about-card grid items-center rounded-2xl px-3 text-center md:row-span-3 md:grid-rows-subgrid"
               >
                 <p className="pt-[calc(0.625rem+1.5px)] font-serif text-2xl leading-none font-medium tracking-tight text-accent">{fact.value}</p>
                 <p className="text-xs leading-tight font-medium text-balance text-ink">{fact.label}</p>
