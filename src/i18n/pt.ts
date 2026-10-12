@@ -28,13 +28,13 @@ export const pt = {
     phrase: 'Desenvolvendo soluções além do código.',
     paragraphs: [
       'Sou desenvolvedor Full Stack e, ao longo da minha trajetória, venho trabalhando em soluções que conectam tecnologia às necessidades reais dos negócios. Gosto de entender o problema por trás de cada demanda e participar da construção de soluções que façam sentido tanto do ponto de vista técnico quanto para quem vai utilizá-las.',
-      'Minha experiência abrange aplicações web e mobile, arquitetura de soluções, definição de regras de negócio e integrações com plataformas de delivery, sistemas de pagamento e CRMs. Atuo em sistemas em produção, nos quais confiabilidade, consistência das regras de negócio e alinhamento com o cliente são fundamentais. Ao longo da minha carreira, também passei a assumir mais responsabilidades nas decisões técnicas, no direcionamento de demandas e na colaboração com outros desenvolvedores.',
+      'Minha experiência abrange aplicações web e mobile, arquitetura de soluções, definição de regras de negócio e integrações com plataformas de delivery, sistemas de pagamento e CRMs. Desenvolvo e mantenho aplicações em ambientes de produção, nos quais confiabilidade, consistência das regras de negócio e alinhamento com o cliente são fundamentais. Ao longo da minha carreira, também passei a assumir mais responsabilidades nas decisões técnicas, no direcionamento de demandas e na colaboração com outros desenvolvedores.',
       'Tenho buscado formas de tornar meu trabalho cada vez mais eficiente, explorando ferramentas de IA e agentes para automatizar processos e apoiar o desenvolvimento. Quero continuar evoluindo em engenharia de software, aprofundando meus conhecimentos e construindo soluções que gerem impacto além do código.',
     ],
     facts: [
       { value: '5', label: 'Projetos em produção', detail: 'Com participação técnica' },
       { value: '10+', label: 'Integrações', detail: 'Delivery, pagamentos e outros serviços' },
-      { value: '415 mil+', label: 'Pedidos mensais processados', detail: 'Nos sistemas em que atuou' },
+      { value: '415 mil+', label: 'Pedidos mensais processados', detail: 'Nos sistemas em que atuo' },
     ],
   },
   experienceSection: {
@@ -220,9 +220,8 @@ export const pt = {
     navLabel: 'Principal',
     themeToLight: 'Ativar tema claro',
     themeToDark: 'Ativar tema escuro',
-    languageToEnglish: 'English',
-    languageToPortuguese: 'Português',
     external: 'abre em nova aba',
+    backToTop: 'Voltar ao topo',
     scrollHint: 'Continuar para a próxima seção',
     technologies: 'Tecnologias',
   },

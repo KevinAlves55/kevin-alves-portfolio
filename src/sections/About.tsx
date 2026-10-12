@@ -44,7 +44,7 @@ export function About() {
             ) : null}
           </div>
           <div className="order-3 min-w-0 lg:col-start-2 lg:row-start-1">
-            <p data-reveal className="font-serif text-[1.75rem] leading-snug font-medium text-balance">
+            <p data-reveal className="font-serif text-[2rem] leading-snug font-medium text-balance">
               {about.phrase}
             </p>
             <div data-reveal className="mt-6 space-y-4">
@@ -61,9 +61,9 @@ export function About() {
                 key={fact.value}
                 className="panel about-card row-span-3 grid grid-rows-subgrid items-center rounded-2xl px-2.5 text-center sm:px-3"
               >
-                <p className="pt-2.5 font-serif text-2xl leading-none font-medium tracking-tight text-accent">{fact.value}</p>
+                <p className="pt-[calc(0.625rem+1.5px)] font-serif text-2xl leading-none font-medium tracking-tight text-accent">{fact.value}</p>
                 <p className="text-xs leading-tight font-medium text-balance text-ink">{fact.label}</p>
-                <p className="pb-2.5 text-[0.6875rem] leading-snug text-balance text-muted">{fact.detail}</p>
+                <p className="pb-[calc(0.625rem+1.5px)] text-[0.6875rem] leading-snug text-balance text-muted">{fact.detail}</p>
               </li>
             ))}
           </ul>

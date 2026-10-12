@@ -9,12 +9,6 @@
           var theme = stored === 'light' || stored === 'dark' ? stored : 'dark'
           document.documentElement.dataset.theme = theme
           document.documentElement.style.colorScheme = theme
-          var storedLocale = localStorage.getItem('locale')
-          var english = storedLocale === 'en'
-          document.documentElement.lang = english ? 'en' : 'pt-BR'
-          if (english) {
-            document.title = 'Kevin Alves — Mid-level Full Stack Developer'
-          }
         } catch (error) {
           document.documentElement.dataset.theme = 'dark'
         }

@@ -1,3 +1,4 @@
+import { BackToTop } from './components/BackToTop.tsx'
 import { Footer } from './components/Footer.tsx'
 import { Header } from './components/Header.tsx'
 import { JsonLd } from './components/JsonLd.tsx'
@@ -30,6 +31,7 @@ function AppContent() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </>
   )
 }

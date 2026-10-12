@@ -1,7 +1,5 @@
 export type Theme = 'dark' | 'light'
 
-export type Locale = 'pt' | 'en'
-
 export type ExperienceEntry = {
   id: string
   company: string

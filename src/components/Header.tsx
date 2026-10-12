@@ -38,7 +38,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const active = useActiveSection(sectionIds)
   const { theme, toggleTheme } = useTheme()
-  const { locale, copy, toggleLocale } = useLocale()
+  const { copy } = useLocale()
   const close = useCallback(() => setOpen(false), [])
   const dialogRef = useDialog(open, close)
   const github = resolveHref('github', links.github)
@@ -90,14 +90,6 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-1 max-lg:ml-auto sm:gap-2">
-          <button
-            type="button"
-            onClick={toggleLocale}
-            className={cn(accessClass, 'font-sans text-xs font-semibold tracking-wide')}
-            aria-label={locale === 'pt' ? copy.ui.languageToEnglish : copy.ui.languageToPortuguese}
-          >
-            {locale === 'pt' ? 'EN' : 'PT'}
-          </button>
           <button
             type="button"
             onClick={toggleTheme}
