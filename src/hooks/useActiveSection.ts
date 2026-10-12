@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const headerOffset = 96
+const headerOffset = 72
 
 export function useActiveSection(ids: readonly string[]): string {
   const [active, setActive] = useState(ids[0] ?? '')

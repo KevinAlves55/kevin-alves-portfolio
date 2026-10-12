@@ -19,11 +19,10 @@ export function Skills() {
   const skillsSection = copy.skillsSection
 
   return (
-    <section id="habilidades" aria-labelledby="habilidades-titulo" className="border-t border-line py-20 sm:py-28">
+    <section id="habilidades" aria-labelledby="habilidades-titulo" className="border-t border-line pt-10 pb-20 sm:pt-14 sm:pb-28">
       <Container>
         <SectionHeading
           id="habilidades-titulo"
-          index={skillsSection.index}
           title={skillsSection.title}
           description={skillsSection.description}
         />

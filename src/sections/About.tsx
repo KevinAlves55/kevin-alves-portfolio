@@ -17,53 +17,52 @@ export function About() {
   const email = resolveHref('email', links.email)
 
   return (
-    <section id="sobre" ref={root} aria-labelledby="sobre-titulo" className="border-t border-line py-20 sm:py-28">
+    <section id="sobre" ref={root} aria-labelledby="sobre-titulo" className="border-t border-line pt-10 pb-20 sm:pt-14 sm:pb-28">
       <Container>
         <div data-reveal>
-          <SectionHeading id="sobre-titulo" index={about.index} title={about.title} />
+          <SectionHeading id="sobre-titulo" title={about.title} />
         </div>
-        <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(16rem,0.78fr)_minmax(0,1.22fr)] lg:gap-14">
-          <div data-reveal className="mx-auto flex w-full max-w-sm flex-col gap-4 lg:mx-0">
-            <img
-              src={photoSrc()}
-              alt={about.photoAlt}
-              width={722}
-              height={1599}
-              className="aspect-5/7 w-full rounded-2xl border border-line object-cover"
-            />
-            <div className="panel space-y-3 rounded-2xl px-5 py-4">
-              <p className="flex items-center gap-2.5 text-sm text-muted">
-                <MapPin className="size-4 shrink-0 text-accent-soft" aria-hidden="true" />
-                <span>{copy.site.location}</span>
-              </p>
-              {email ? (
-                <a href={email} className="flex items-center gap-2.5 text-sm break-all text-ink hover:text-accent">
-                  <Mail className="size-4 shrink-0 text-accent-soft" aria-hidden="true" />
-                  <span>{links.email}</span>
-                </a>
-              ) : null}
-            </div>
+        <div className="mt-12 grid items-start gap-8 lg:grid-cols-[24rem_minmax(0,1fr)] lg:gap-x-14 lg:gap-y-4">
+          <img
+            data-reveal
+            src={photoSrc()}
+            alt={about.photoAlt}
+            width={722}
+            height={1599}
+            className="order-1 mx-auto aspect-5/7 w-full max-w-sm rounded-2xl border border-line object-cover lg:col-start-1 lg:row-start-1 lg:mx-0"
+          />
+          <div data-reveal className="panel order-2 mx-auto w-full max-w-sm space-y-3 rounded-2xl px-5 py-4 lg:col-start-1 lg:row-start-2 lg:mx-0">
+            <p className="flex items-center gap-2.5 text-sm text-muted">
+              <MapPin className="size-4 shrink-0 text-accent-soft" aria-hidden="true" />
+              <span>{copy.site.location}</span>
+            </p>
+            {email ? (
+              <a href={email} className="flex items-center gap-2.5 text-sm break-all text-ink hover:text-accent">
+                <Mail className="size-4 shrink-0 text-accent-soft" aria-hidden="true" />
+                <span>{links.email}</span>
+              </a>
+            ) : null}
           </div>
-          <div>
-            <p data-reveal className="max-w-xl font-serif text-3xl leading-snug font-medium text-balance sm:text-4xl">
+          <div className="order-3 min-w-0 lg:col-start-2 lg:row-start-1">
+            <p data-reveal className="font-serif text-[1.75rem] leading-snug font-medium text-balance">
               {about.phrase}
             </p>
-            <div data-reveal className="mt-6 max-w-2xl space-y-4">
+            <div data-reveal className="mt-6 space-y-4">
               {about.paragraphs.map((paragraph) => (
                 <p key={paragraph} className="text-base leading-relaxed text-pretty text-muted">
                   {paragraph}
                 </p>
               ))}
             </div>
-            <ul data-reveal className="mt-8 grid gap-3 sm:grid-cols-3">
-              {about.facts.map((fact) => (
-                <li key={fact.value} className="panel rounded-2xl px-4 py-5">
-                  <p className="font-serif text-3xl font-medium tracking-tight text-accent">{fact.value}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{fact.label}</p>
-                </li>
-              ))}
-            </ul>
           </div>
+          <ul data-reveal className="order-4 grid grid-cols-3 gap-3 lg:col-start-2 lg:row-start-2 lg:h-full lg:grid-rows-1 lg:self-stretch">
+            {about.facts.map((fact) => (
+              <li key={fact.value} className="panel flex flex-col items-center justify-center rounded-2xl px-3 py-3 text-center sm:px-4 lg:h-full">
+                <p className="font-serif text-3xl leading-none font-medium tracking-tight text-accent">{fact.value}</p>
+                <p className="mt-1.5 text-sm leading-tight text-muted">{fact.label}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </Container>
     </section>

@@ -10,11 +10,10 @@ export function Projects() {
   const plannedProjects = copy.projects.filter((project) => project.status === 'planejado')
 
   return (
-    <section id="projetos" aria-labelledby="projetos-titulo" className="border-t border-line py-20 sm:py-28">
+    <section id="projetos" aria-labelledby="projetos-titulo" className="border-t border-line pt-10 pb-20 sm:pt-14 sm:pb-28">
       <Container>
         <SectionHeading
           id="projetos-titulo"
-          index={projectsSection.index}
           title={projectsSection.title}
           description={projectsSection.description}
         />

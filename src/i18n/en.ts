@@ -25,18 +25,18 @@ export const en: Messages = {
     linkedin: 'LinkedIn',
   },
   about: {
-    index: '01',
-    title: 'About',
+    title: 'About me',
     photoAlt: 'Portrait of Kevin Alves',
-    phrase: 'I turn a client need into scope, rules, and a production release.',
+    phrase: 'Building solutions beyond the code.',
     paragraphs: [
-      'I work as a mid-level full stack developer at Alphacode, on delivery networks. The work is no longer only executing a task: I join the client meeting, gather requirements and impact, design the rule, and open the release with a team of three.',
-      'Day to day, that becomes branch organization, code review, production updates, and app releases. In the solutions, the focus is payment, delivery, and messaging, with a database and processing rules built to handle volume and stay maintainable. I use LLMs and AI agents in that flow, from the rule to the code, without giving up the design of the solution.',
+      'I am a full stack developer. I like to understand the problem behind each request and build a solution that makes sense technically and for the people who will use it.',
+      'I build and maintain web and mobile applications in production: business rules and integrations with delivery, payments, CRM, and messaging. Reliability, consistent rules, and alignment with the client are part of that work. I also take on technical decisions and steer the work with other developers.',
+      'I use AI and agents to move faster in development. I keep going deeper into software engineering, looking for impact beyond the code.',
     ],
     facts: [
-      { value: '3', label: 'people on the project team' },
-      { value: '415k+', label: 'orders a month on the systems where I built the database, the rules, and the bridge to the client' },
-      { value: '5.8M', label: 'active users in that base' },
+      { value: '5', label: 'projects in production' },
+      { value: '10+', label: 'integrations' },
+      { value: '415k+', label: 'orders a month' },
     ],
   },
   experienceSection: {

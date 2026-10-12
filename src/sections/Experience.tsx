@@ -7,11 +7,10 @@ export function Experience() {
   const experienceSection = copy.experienceSection
 
   return (
-    <section id="experiencia" aria-labelledby="experiencia-titulo" className="border-t border-line py-20 sm:py-28">
+    <section id="experiencia" aria-labelledby="experiencia-titulo" className="border-t border-line pt-10 pb-20 sm:pt-14 sm:pb-28">
       <Container>
         <SectionHeading
           id="experiencia-titulo"
-          index={experienceSection.index}
           title={experienceSection.title}
           description={experienceSection.description}
         />

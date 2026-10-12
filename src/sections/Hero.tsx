@@ -29,8 +29,6 @@ export function Hero() {
           <p data-hero-reveal className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line bg-surface/80 px-3.5 py-1.5 text-xs text-muted sm:text-sm">
             <span className="status-dot shrink-0" aria-hidden="true" />
             <span>{copy.site.role}</span>
-            <span aria-hidden="true">·</span>
-            <span>{copy.site.location}</span>
           </p>
           <p data-hero-reveal className="mt-8 font-mono text-sm tracking-[0.16em] text-accent-soft sm:text-base">{copy.site.greeting}</p>
           <h1 data-hero-reveal className="mt-0 font-serif text-[45px] leading-[1.05] font-medium tracking-tight text-balance sm:text-[69px] lg:text-[93px]">
