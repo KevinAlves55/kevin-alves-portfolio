@@ -32,9 +32,9 @@ export const pt = {
       'Tenho buscado formas de tornar meu trabalho cada vez mais eficiente, explorando ferramentas de IA e agentes para automatizar processos e apoiar o desenvolvimento. Quero continuar evoluindo em engenharia de software, aprofundando meus conhecimentos e construindo soluções que gerem impacto além do código.',
     ],
     facts: [
-      { value: '5', label: 'projetos em produção' },
-      { value: '10+', label: 'integrações' },
-      { value: '415 mil+', label: 'pedidos por mês' },
+      { value: '5', label: 'Projetos em produção', detail: 'Com participação técnica' },
+      { value: '10+', label: 'Integrações', detail: 'Delivery, pagamentos e outros serviços' },
+      { value: '415 mil+', label: 'Pedidos mensais processados', detail: 'Nos sistemas em que atuou' },
     ],
   },
   experienceSection: {

@@ -31,7 +31,7 @@ export function About() {
             height={1599}
             className="order-1 mx-auto aspect-5/7 w-full max-w-sm rounded-2xl border border-line object-cover lg:col-start-1 lg:row-start-1 lg:mx-0"
           />
-          <div data-reveal className="panel order-2 mx-auto w-full max-w-sm space-y-3 rounded-2xl px-5 py-4 lg:col-start-1 lg:row-start-2 lg:mx-0">
+          <div data-reveal className="panel about-card order-2 mx-auto flex w-full max-w-sm flex-col justify-center space-y-3 rounded-2xl px-5 py-4 lg:col-start-1 lg:row-start-2 lg:mx-0 lg:h-full lg:self-stretch">
             <p className="flex items-center gap-2.5 text-sm text-muted">
               <MapPin className="size-4 shrink-0 text-accent-soft" aria-hidden="true" />
               <span>{copy.site.location}</span>
@@ -55,11 +55,15 @@ export function About() {
               ))}
             </div>
           </div>
-          <ul data-reveal className="order-4 grid grid-cols-3 gap-3 lg:col-start-2 lg:row-start-2 lg:h-full lg:grid-rows-1 lg:self-stretch">
+          <ul data-reveal className="order-4 grid grid-cols-3 grid-rows-[auto_auto_auto] gap-x-3 gap-y-1 lg:col-start-2 lg:row-start-2 lg:h-full lg:self-stretch">
             {about.facts.map((fact) => (
-              <li key={fact.value} className="panel flex flex-col items-center justify-center rounded-2xl px-3 py-3 text-center sm:px-4 lg:h-full">
-                <p className="font-serif text-3xl leading-none font-medium tracking-tight text-accent">{fact.value}</p>
-                <p className="mt-1.5 text-sm leading-tight text-muted">{fact.label}</p>
+              <li
+                key={fact.value}
+                className="panel about-card row-span-3 grid grid-rows-subgrid items-center rounded-2xl px-2.5 text-center sm:px-3"
+              >
+                <p className="pt-2.5 font-serif text-2xl leading-none font-medium tracking-tight text-accent">{fact.value}</p>
+                <p className="text-xs leading-tight font-medium text-balance text-ink">{fact.label}</p>
+                <p className="pb-2.5 text-[0.6875rem] leading-snug text-balance text-muted">{fact.detail}</p>
               </li>
             ))}
           </ul>

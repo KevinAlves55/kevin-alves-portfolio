@@ -34,9 +34,9 @@ export const en: Messages = {
       'I use AI and agents to move faster in development. I keep going deeper into software engineering, looking for impact beyond the code.',
     ],
     facts: [
-      { value: '5', label: 'projects in production' },
-      { value: '10+', label: 'integrations' },
-      { value: '415k+', label: 'orders a month' },
+      { value: '5', label: 'Projects in production', detail: 'With technical involvement' },
+      { value: '10+', label: 'Integrations', detail: 'Delivery, payments, and other services' },
+      { value: '415k+', label: 'Monthly orders processed', detail: 'On the systems he worked on' },
     ],
   },
   experienceSection: {

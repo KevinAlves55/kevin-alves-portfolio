@@ -131,6 +131,10 @@
   box-shadow: var(--shadow);
 }
 
+.about-card:hover {
+  border-color: var(--accent-soft);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .interactive-control {
     transition:
@@ -158,6 +162,16 @@
   }
 
   .card-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  .about-card {
+    transition:
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .about-card:hover {
     transform: translateY(-2px);
   }
 }
