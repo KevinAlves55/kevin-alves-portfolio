@@ -25,7 +25,7 @@ export const pt = {
   about: {
     title: 'Sobre Mim',
     photoAlt: 'Retrato de Kevin Alves',
-    phrase: 'Desenvolvendo soluções além do código.',
+    phrase: 'Desenvolvendo soluções - além do código.',
     paragraphs: [
       'Sou desenvolvedor Full Stack e, ao longo da minha trajetória, venho trabalhando em soluções que conectam tecnologia às necessidades reais dos negócios. Gosto de entender o problema por trás de cada demanda e participar da construção de soluções que façam sentido tanto do ponto de vista técnico quanto para quem vai utilizá-las.',
       'Minha experiência abrange aplicações web e mobile, arquitetura de soluções, definição de regras de negócio e integrações com plataformas de delivery, sistemas de pagamento e CRMs. Desenvolvo e mantenho aplicações em ambientes de produção, nos quais confiabilidade, consistência das regras de negócio e alinhamento com o cliente são fundamentais. Ao longo da minha carreira, também passei a assumir mais responsabilidades nas decisões técnicas, no direcionamento de demandas e na colaboração com outros desenvolvedores.',

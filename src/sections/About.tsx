@@ -15,6 +15,7 @@ export function About() {
   const about = copy.about
   const root = useSectionReveal()
   const email = resolveHref('email', links.email)
+  const [phraseLead, phraseRest] = about.phrase.split('-')
 
   return (
     <section id="sobre" ref={root} aria-labelledby="sobre-titulo" className="border-t border-line pt-10 pb-20 sm:pt-14 sm:pb-28">
@@ -45,8 +46,9 @@ export function About() {
           </div>
           <div className="order-3 min-w-0 lg:col-start-2 lg:row-start-1">
             <p data-reveal className="font-serif text-[2rem] leading-snug font-medium text-balance">
-              {about.phrase}
+              {phraseLead} <span className="text-accent">{phraseRest}</span>
             </p>
+
             <div data-reveal className="mt-6 space-y-4">
               {about.paragraphs.map((paragraph) => (
                 <p key={paragraph} className="text-base leading-relaxed text-pretty text-muted">
