@@ -6,7 +6,8 @@ export type ExperienceEntry = {
   role: string
   periodLabel: string
   current: boolean
-  summary: string
+  engagement: string
+  levelNote: string | null
   activities: readonly string[]
   technologies: readonly string[]
   domains: readonly string[]

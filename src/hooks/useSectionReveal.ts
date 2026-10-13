@@ -16,21 +16,41 @@ export function useSectionReveal() {
       const items = gsap.utils.toArray<HTMLElement>('[data-reveal]', scope)
       if (items.length === 0) return
 
-      gsap.set(items, { autoAlpha: 0, y: 18 })
+      const fromLeft = items.filter((item) => item.dataset.reveal === 'left')
+      const fromBelow = items.filter((item) => item.dataset.reveal !== 'left')
+
+      if (fromBelow.length > 0) gsap.set(fromBelow, { autoAlpha: 0, y: 18 })
+      if (fromLeft.length > 0) gsap.set(fromLeft, { autoAlpha: 0, x: -32 })
 
       const observer = new IntersectionObserver(
         (entries) => {
           if (!entries.some((entry) => entry.isIntersecting)) return
-          gsap.to(items, {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.7,
-            stagger: 0.08,
-            ease: 'power2.out',
-          })
+          const timeline = gsap.timeline()
+          if (fromBelow.length > 0) {
+            timeline.to(fromBelow, {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.7,
+              stagger: 0.08,
+              ease: 'power2.out',
+            })
+          }
+          if (fromLeft.length > 0) {
+            timeline.to(
+              fromLeft,
+              {
+                autoAlpha: 1,
+                x: 0,
+                duration: 0.75,
+                stagger: 0.12,
+                ease: 'power2.out',
+              },
+              fromBelow.length > 0 ? '-=0.35' : 0,
+            )
+          }
           observer.disconnect()
         },
-        { threshold: 0.2 },
+        { threshold: 0.15 },
       )
 
       observer.observe(scope)
