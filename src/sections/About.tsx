@@ -21,7 +21,7 @@ export function About() {
     <section id="sobre" ref={root} aria-labelledby="sobre-titulo" className="border-t border-line pt-10 pb-20 sm:pt-14 sm:pb-28">
       <Container>
         <div data-reveal>
-          <SectionHeading id="sobre-titulo" title={about.title} />
+          <SectionHeading id="sobre-titulo" title={about.title} description={about.description} />
         </div>
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[24rem_minmax(0,1fr)] lg:gap-x-14 lg:gap-y-4">
           <img

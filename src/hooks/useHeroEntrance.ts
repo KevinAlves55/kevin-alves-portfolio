@@ -10,16 +10,33 @@ export function useHeroEntrance() {
       const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false
       if (reduce) return
 
-      const glow = root.current?.querySelector('[data-hero-glow]') ?? null
-      const items = gsap.utils.toArray<HTMLElement>('[data-hero-reveal]')
+      const scope = root.current
+      if (!scope) return
+
+      const glow = scope.querySelector('[data-hero-glow]')
+      const badge = scope.querySelector('[data-hero-badge]')
+      const items = gsap.utils.toArray<HTMLElement>('[data-hero-reveal]', scope)
       const timeline = gsap.timeline()
 
       if (glow) {
         timeline.from(glow, {
           autoAlpha: 0,
-          duration: 0.9,
-          ease: 'power2.out',
+          duration: 1.15,
+          ease: 'power1.out',
         })
+      }
+
+      if (badge) {
+        timeline.from(
+          badge,
+          {
+            autoAlpha: 0,
+            y: -14,
+            duration: 0.65,
+            ease: 'power2.out',
+          },
+          glow ? '-=0.28' : 0,
+        )
       }
 
       if (items.length > 0) {
@@ -32,7 +49,7 @@ export function useHeroEntrance() {
             stagger: 0.08,
             ease: 'power2.out',
           },
-          glow ? '-=0.2' : 0,
+          badge || glow ? '-=0.12' : 0,
         )
       }
     },

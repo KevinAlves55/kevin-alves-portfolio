@@ -2,7 +2,6 @@ import { Container } from '../components/Container.tsx'
 import { SectionHeading } from '../components/SectionHeading.tsx'
 import { useLocale } from '../hooks/useLocale.ts'
 import { useSectionReveal } from '../hooks/useSectionReveal.ts'
-import { cn } from '../lib/cn.ts'
 
 export function Experience() {
   const { copy } = useLocale()
@@ -21,22 +20,9 @@ export function Experience() {
         <div data-reveal>
           <SectionHeading id="experiencia-titulo" title={experienceSection.title} description={experienceSection.description} />
         </div>
-        <ol className="relative mt-12 flex flex-col gap-5">
-          {entries.map((entry, index) => (
-            <li key={entry.id} data-reveal="left" className="relative pl-8 sm:pl-10">
-              {index < entries.length - 1 ? (
-                <span aria-hidden="true" className="absolute top-9 left-2 h-[calc(100%+1.25rem)] w-px -translate-x-1/2 bg-line" />
-              ) : null}
-              <span
-                aria-hidden="true"
-                className={cn(
-                  'absolute top-7 left-0 z-10 size-4 rounded-full border-2 bg-canvas',
-                  entry.current ? 'border-accent' : 'border-line-strong',
-                )}
-              >
-                {entry.current ? <span className="absolute inset-1 rounded-full bg-accent" /> : null}
-              </span>
-              <article className="panel about-card rounded-2xl px-5 py-5 sm:px-6">
+        <div className="mt-12 flex flex-col gap-5">
+          {entries.map((entry) => (
+            <article key={entry.id} data-reveal className="panel about-card rounded-2xl px-5 py-5 sm:px-6">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0">
                     <h3 className="text-xl font-semibold tracking-tight text-balance sm:text-2xl">{entry.role}</h3>
@@ -51,6 +37,7 @@ export function Experience() {
                     {entry.periodLabel}
                   </p>
                 </div>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-pretty text-muted">{entry.summary}</p>
                 <ul className="mt-4 space-y-2.5">
                   {entry.activities.map((activity) => (
                     <li key={activity} className="flex gap-3 text-sm leading-relaxed text-ink">
@@ -77,10 +64,9 @@ export function Experience() {
                     {entry.domains.join(', ')}
                   </p>
                 ) : null}
-              </article>
-            </li>
+            </article>
           ))}
-        </ol>
+        </div>
       </Container>
     </section>
   )

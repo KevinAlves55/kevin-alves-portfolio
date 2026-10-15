@@ -8,6 +8,7 @@ export type ExperienceEntry = {
   current: boolean
   engagement: string
   levelNote: string | null
+  summary: string
   activities: readonly string[]
   technologies: readonly string[]
   domains: readonly string[]

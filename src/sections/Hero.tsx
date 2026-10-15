@@ -26,7 +26,7 @@ export function Hero() {
       />
       <Container className="relative flex min-h-svh flex-col items-center justify-center pt-28 pb-16 text-center">
         <div className="flex w-full max-w-4xl flex-col items-center">
-          <p data-hero-reveal className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line bg-surface/80 px-3.5 py-1.5 text-xs text-muted sm:text-sm">
+          <p data-hero-badge className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-line bg-surface/80 px-3.5 py-1.5 text-xs text-muted sm:text-sm">
             <span className="status-dot shrink-0" aria-hidden="true" />
             <span>{copy.site.role}</span>
           </p>
